@@ -23,7 +23,8 @@ buttonPressdir = True
 
 
 #configuracao do firebase
-URL_Firebase = 'https://gerdau-2df3f.firebaseio.com/'
+URL_Firebase = 'firebaseio.com/' 
+#URL escondida por segurança
 
 firebase = firebase.FirebaseApplication(URL_Firebase, None)
 
