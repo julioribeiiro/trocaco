@@ -1,0 +1,16 @@
+apply plugin: 'java'
+apply plugin: 'jacoco'
+apply plugin: 'application'
+
+mainClassName = 'com.trocaco.firebase.Main'
+
+repositories {
+    jcenter()
+    google()
+}
+
+dependencies {
+    testImplementation     'junit:junit:4.13'
+    
+    implementation 'com.google.firebase:firebase-admin:6.11.0'
+}

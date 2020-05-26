@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "535390292202",
+    "firebase_url": "https://gerdau-2df3f.firebaseio.com",
+    "project_id": "gerdau-2df3f",
+    "storage_bucket": "gerdau-2df3f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:535390292202:android:d58f6c9344889afbbf6f93",
+        "android_client_info": {
+          "package_name": "trocaco.trocaco"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "535390292202-aq8ovtb8cj2cfr9hd1p5akq4d4hclco6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0U7exhUe56hV2BjZtR-zzYB2DELDpbpQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "535390292202-aq8ovtb8cj2cfr9hd1p5akq4d4hclco6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
