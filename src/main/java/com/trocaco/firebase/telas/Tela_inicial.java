@@ -229,6 +229,7 @@ public class Tela_inicial extends javax.swing.JFrame {
     }
     
     private void addBotao(int tag, int num, String data){
+        lbMessage.setText("Aguardando resposta do servidor...");
         mDatabase = FirebaseDatabase.getInstance().getReference().child("botao");
         
         Botao botao = new Botao(tag, num, data);
@@ -270,48 +271,6 @@ public class Tela_inicial extends javax.swing.JFrame {
         });
     }
     
-    /*
-    private void setFirstValue(String value){
-        //write a massage to databse
-        mDatabase = FirebaseDatabase.getInstance().getReference().child("message");
-        
-        //Database: gerdau-2df3f
-        //Table: --
-        //Column: message
-        //Row: value
-        
-        
-        mDatabase.setValue(value, new DatabaseReference.CompletionListener() {
-            @Override
-            public void onComplete(DatabaseError de, DatabaseReference dr) {
-                lbMessage.setText("Finish");
-            }
-        });
-    }
- 
-    
-    
-    private void readFirstValue(){
-        mDatabase = FirebaseDatabase.getInstance().getReference().child("message");
-        
-        mDatabase.addValueEventListener(new ValueEventListener(){
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot){
-                String value;
-                value = dataSnapshot.getValue(String.class);
-                tfTeste.setText(value);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError de) {
-                //Log.d(TAG, "Failed to read value. ", de.toException()); //To change body of generated methods, choose Tools | Templates.
-            }
-            
-        });
-        
-        
-    }
-*/
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btBuscar;
