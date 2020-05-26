@@ -29,31 +29,33 @@ URL_Firebase = 'firebaseio.com/'
 firebase = firebase.FirebaseApplication(URL_Firebase, None)
 
 #funcao para enviar dado do botao
-def envia_botao(num, buttonPress) :
+def send_button(num, buttonPress) :
     global firebase
 
     data_hora = datetime.datetime.now()
-    dados_firebase = {"TAG": buttonPress, "NUM": num, "Data_Hora": data_hora}
+    dados_firebase = {"tag": buttonPress, "num": num, "data": data_hora}
     firebase.post('/ButtonPressed', dados_firebase)
     return
 
 GPIO.setwarnings(False)
 try:
     while True:
+      
         buttonPressesq = GPIO.input(buttonPinesq)
         buttonPressdir = GPIO.input(buttonPindir)
         buttonPressmeio = GPIO.input(buttonPinmeio)
+        
         if buttonPressesq == False:
-            print("1 - Item da esquerda...")
-            envia_botao(1, buttonPressesq)
+            #print("1 - Item da esquerda...")
+            send_button(1, buttonPressesq)
             sleep(1)
         if buttonPressdir == False:
-            print("2 - Item da direita...")
-            envia_botao(2,buttonPressdir)
+            #print("2 - Item da direita...")
+            send_button(2,buttonPressdir)
             sleep(1)
         if buttonPressmeio == False:
-            print("3 - Selecionando item...")
-            envia_botao(3, buttonPressmeio)
+            #print("3 - Selecionando item...")
+            send_button(3, buttonPressmeio)
             sleep(1)
 finally:
     GPIO.cleanup()
