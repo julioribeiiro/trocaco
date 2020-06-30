@@ -105,10 +105,9 @@ public class Tela_login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        Tela_inicial tela_inicial = new Tela_inicial();
-        tela_inicial.setVisible(true);
-        
+
+        Hub hub = new Hub();
+        hub.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
