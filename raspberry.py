@@ -45,7 +45,7 @@ def envia_botao(buttonPress, num) :
 
 def fetch_botao() :
     global i
-    i = 1
+
     time.sleep(1)
     name = firebase.get('/perguntas/{0}'.format(i), None)
     long_string(display, "{0}".format(name), 1) # Write line of text to first line of display
@@ -54,6 +54,7 @@ def fetch_botao() :
     if buttonPressmeio == False:
             i = i + 1
             long_string(display, "Carregando resposta...", 1)
+	    envia_botao(buttonPressmeio, 3)
             time.sleep(2)
             sleep(2)
             display.lcd_clear()
@@ -61,8 +62,6 @@ def fetch_botao() :
             long_string(display, "{0}".format(name), 1)
             time.sleep(2)
             sleep(2)
-            envia_botao(buttonPressmeio, 3)
-            sleep(1)
             display.lcd_clear()
             long_string(display, "Muito obrigado pela sua contribuicao!!", 1)
 
