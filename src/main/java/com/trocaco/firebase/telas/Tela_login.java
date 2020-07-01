@@ -52,6 +52,7 @@ public class Tela_login extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 36)); // NOI18N
         jButton1.setForeground(new java.awt.Color(120, 177, 201));
         jButton1.setText("Entrar");
+        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.setHideActionText(true);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
