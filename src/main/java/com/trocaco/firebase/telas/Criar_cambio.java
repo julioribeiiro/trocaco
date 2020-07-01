@@ -6,6 +6,7 @@
 package com.trocaco.firebase.telas;
 
 import com.sun.prism.paint.Color;
+import java.awt.Cursor;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import javax.swing.ImageIcon;
@@ -16,6 +17,8 @@ import java.awt.Graphics2D;
 import java.awt.LayoutManager;
 import java.awt.RenderingHints;
 import java.awt.TextField;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javafx.scene.control.CheckBox;
 import javax.swing.JPanel;
 
@@ -139,7 +142,7 @@ public class Criar_cambio extends javax.swing.JFrame {
 
         qtdCheckLb.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 13)); // NOI18N
         qtdCheckLb.setForeground(new java.awt.Color(120, 177, 201));
-        qtdCheckLb.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/trocaco/firebase/resources/checkMark.png"))); // NOI18N
+        qtdCheckLb.setIcon(new javax.swing.ImageIcon("/Users/julioribeiro/git/projetos/trocaco/Trocaco/src/main/java/com/trocaco/firebase/resources/checkMark.png")); // NOI18N
         qtdCheckLb.setText("0/1");
 
         jLabel2.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 30)); // NOI18N
@@ -423,24 +426,45 @@ public class Criar_cambio extends javax.swing.JFrame {
             }
         });
     }
-    
-    private void setLayoutSideBar(){
+           private void setLayoutSideBar(){
         sideImg.setLayout(new FlowLayout(FlowLayout.LEFT, 17, 35));
+        
         JLabel logoImg = new JLabel( new ImageIcon("/Users/julioribeiro/git/projetos/trocaco/Trocaco/src/main/java/com/trocaco/firebase/resources/Frame.png"));
         JLabel addCambioIC = new JLabel( new ImageIcon("/Users/julioribeiro/git/projetos/trocaco/Trocaco/src/main/java/com/trocaco/firebase/resources/addCambioIC.png"));
         JLabel addCambioLB = new JLabel("Adicionar câmbio");
+        addCambioLB.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         addCambioLB.setFont(new Font("Poppins", Font.BOLD, 15));
         addCambioLB.setForeground(java.awt.Color.white);
+        addCambioLB.addMouseListener(new MouseAdapter(){
+            public void mouseClicked(MouseEvent e)  
+            {  
+               new Criar_cambio().setVisible(true);
+            } 
+        });
+        
         JLabel relatoriosIC = new JLabel( new ImageIcon("/Users/julioribeiro/git/projetos/trocaco/Trocaco/src/main/java/com/trocaco/firebase/resources/relatoriosIC.png"));
         JLabel relatoriosLB = new JLabel("Relatórios");
+        relatoriosLB.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         relatoriosLB.setFont(new Font("Poppins", Font.BOLD, 15));
         relatoriosLB.setForeground(java.awt.Color.white);
+
+        
         JLabel historicoIC = new JLabel( new ImageIcon("/Users/julioribeiro/git/projetos/trocaco/Trocaco/src/main/java/com/trocaco/firebase/resources/historicoIC.png"));
         JLabel historicoLB = new JLabel("Histórico");
+        historicoLB.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         historicoLB.setFont(new Font("Poppins", Font.BOLD, 15));
         historicoLB.setForeground(java.awt.Color.white);
+        historicoLB.addMouseListener(new MouseAdapter(){
+            public void mouseClicked(MouseEvent e)  
+            {  
+               new Tela_inicial().setVisible(true);
+            } 
+        });
+        
+        
         JLabel buscaIC = new JLabel( new ImageIcon("/Users/julioribeiro/git/projetos/trocaco/Trocaco/src/main/java/com/trocaco/firebase/resources/buscaIC.png"));
         JLabel buscaLB = new JLabel("Busca");
+        buscaLB.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         buscaLB.setFont(new Font("Poppins", Font.BOLD, 15));
         buscaLB.setForeground(java.awt.Color.white);
         
