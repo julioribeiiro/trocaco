@@ -5,7 +5,7 @@
  */
 package com.trocaco.firebase;
 
-import com.trocaco.firebase.telas.Tela_inicial;
+
 import com.trocaco.firebase.telas.Tela_login;
 
 /**

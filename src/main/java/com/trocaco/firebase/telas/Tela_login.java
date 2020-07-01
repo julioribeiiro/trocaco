@@ -39,7 +39,7 @@ public class Tela_login extends javax.swing.JFrame {
 
         jTextField1.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 36)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(89, 130, 153));
-        jTextField1.setText("Usu·rio");
+        jTextField1.setText("Usu√°rio");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -80,8 +80,7 @@ public class Tela_login extends javax.swing.JFrame {
         getContentPane().add(jComboBox1);
         jComboBox1.setBounds(520, 465, 470, 50);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Aluno\\Desktop\\login.png")); // NOI18N
-        jLabel1.setText("Usu·rio");
+        jLabel1.setText("Usu√°rio");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 1528, 1047);
 
@@ -95,8 +94,7 @@ public class Tela_login extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Hub hub = new Hub();
-        hub.setVisible(true);
+        new Tela_home().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
