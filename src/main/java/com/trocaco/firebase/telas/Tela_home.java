@@ -6,13 +6,19 @@
 package com.trocaco.firebase.telas;
 
 import java.awt.Cursor;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.LayoutManager;
+import java.awt.RenderingHints;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 /**
  *
@@ -38,17 +44,21 @@ public class Tela_home extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        jPanel2 = new RoundedPanel(25, java.awt.Color.white);
         jLabel1 = new javax.swing.JLabel();
-        jProgressBar1 = new javax.swing.JProgressBar();
         jLabel2 = new javax.swing.JLabel();
-        jProgressBar2 = new javax.swing.JProgressBar();
         jLabel3 = new javax.swing.JLabel();
-        jProgressBar3 = new javax.swing.JProgressBar();
         jLabel4 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
         jLabel5 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
+        jPanel3 = new RoundedPanel(25, new java.awt.Color(196,196,196));
+        jLabel6 = new javax.swing.JLabel();
+        jPanel4 = new RoundedPanel(25, new java.awt.Color(196,196,196));
+        jLabel7 = new javax.swing.JLabel();
+        jPanel5 = new RoundedPanel(25, new java.awt.Color(196,196,196));
+        jPanel6 = new RoundedPanel(25, new java.awt.Color(7,147,4));
+        jLabel8 = new javax.swing.JLabel();
         sideImg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -58,41 +68,118 @@ public class Tela_home extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(229, 229, 229));
         jPanel1.setPreferredSize(new java.awt.Dimension(1530, 1024));
 
+        jPanel2.setOpaque(false);
+        jPanel2.setForeground(new java.awt.Color(255, 255, 255));
+
         jLabel1.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(5, 64, 97));
         jLabel1.setText("CÂMBIO ATUAL");
-
-        jProgressBar1.setForeground(new java.awt.Color(7, 147, 4));
-        jProgressBar1.setStringPainted(true);
 
         jLabel2.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(5, 64, 97));
         jLabel2.setText("PRÉ-CÂMBIO");
 
-        jProgressBar2.setForeground(new java.awt.Color(7, 147, 4));
-        jProgressBar2.setStringPainted(true);
-
         jLabel3.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(5, 64, 97));
-        jLabel3.setText("ATIVIDADE");
-
-        jProgressBar3.setForeground(new java.awt.Color(7, 147, 4));
-        jProgressBar3.setString("70%");
-        jProgressBar3.setStringPainted(true);
+        jLabel3.setText("ATIVIDADES");
 
         jLabel4.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 36)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(5, 64, 97));
         jLabel4.setText("ERROS");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setForeground(new java.awt.Color(120, 177, 201));
-        jTextArea1.setRows(5);
-        jTextArea1.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi augue libero, congue at congue\n sed, eleifend eget ex. In vel velit dignissim, porttitor libero sed, hendrerit tortor.\n Nulla facilisi. Proin porta nisl quis enim condimentum, ac commodo lacus pulvinar.\n Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.\n Integer iaculis iaculis sapien, eget lacinia justo euismod ac. Nulla facilisi.\n Sed vel bibendum lectus. Duis tincidunt at nulla in molestie. Vivamus faucibus purus\n vel vestibulum venenatis. Donec facilisis facilisis dui, et aliquam felis viverra eu.\n Fusce enim urna, malesuada eu eros non, tristique porttitor purus. Nunc consectetur id massa et placerat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi elementum nunc sed neque eleifend, ut sollicitudin lorem pharetra. Pellentesque semper elit sed sapien congue facilisis.");
-        jScrollPane1.setViewportView(jTextArea1);
-
         jLabel5.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(120, 177, 201));
         jLabel5.setText("EM ANDAMENTO");
+
+        jTextArea2.setEditable(false);
+        jTextArea2.setColumns(20);
+        jTextArea2.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 15)); // NOI18N
+        jTextArea2.setForeground(new java.awt.Color(120, 177, 201));
+        jTextArea2.setLineWrap(true);
+        jTextArea2.setRows(5);
+        jTextArea2.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi augue libero, congue at congue  sed, eleifend eget ex. In vel velit dignissim, porttitor libero sed, hendrerit tortor.  Nulla facilisi. Proin porta nisl quis enim condimentum, ac commodo lacus pulvinar.  Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.  Integer iaculis iaculis sapien, eget lacinia justo euismod ac. Nulla facilisi.  Sed vel bibendum lectus. Duis tincidunt at nulla in molestie. Vivamus faucibus purus  vel vestibulum venenatis. Donec facilisis facilisis dui, et aliquam felis viverra eu.  Fusce enim urna, malesuada eu eros non, tristique porttitor purus. Nunc consectetur id massa et placerat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi elementum nunc sed neque eleifend, ut sollicitudin lorem pharetra. Pellentesque semper elit sed sapien congue facilisis.");
+        jTextArea2.setBorder(null);
+        jTextArea2.setCaretColor(new java.awt.Color(255, 255, 255));
+        jTextArea2.setHighlighter(null);
+        jScrollPane2.setViewportView(jTextArea2);
+
+        jPanel3.setOpaque(false);
+        jPanel3.setBackground(new java.awt.Color(196, 196, 196));
+        jPanel3.setForeground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1035, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 18, Short.MAX_VALUE)
+        );
+
+        jLabel6.setBackground(new java.awt.Color(5, 64, 97));
+        jLabel6.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 19)); // NOI18N
+        jLabel6.setText("o%");
+
+        jPanel4.setOpaque(false);
+        jPanel4.setBackground(new java.awt.Color(196, 196, 196));
+        jPanel4.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel4.setPreferredSize(new java.awt.Dimension(624, 18));
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 18, Short.MAX_VALUE)
+        );
+
+        jLabel7.setBackground(new java.awt.Color(5, 64, 97));
+        jLabel7.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 19)); // NOI18N
+        jLabel7.setText("o%");
+
+        jPanel5.setOpaque(false);
+        jPanel5.setBackground(new java.awt.Color(196, 196, 196));
+        jPanel5.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel5.setPreferredSize(new java.awt.Dimension(624, 18));
+
+        jPanel6.setOpaque(false);
+        jPanel6.setBackground(new java.awt.Color(7, 147, 4));
+        jPanel6.setForeground(new java.awt.Color(7, 147, 4));
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 283, Short.MAX_VALUE)
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 18, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 496, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jLabel8.setBackground(new java.awt.Color(5, 64, 97));
+        jLabel8.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 19)); // NOI18N
+        jLabel8.setText("30%");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -107,52 +194,66 @@ public class Tela_home extends javax.swing.JFrame {
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(33, 33, 33))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jProgressBar3, javax.swing.GroupLayout.PREFERRED_SIZE, 561, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jProgressBar2, javax.swing.GroupLayout.PREFERRED_SIZE, 561, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 812, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane1))
-                        .addContainerGap(254, Short.MAX_VALUE))))
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(17, 17, 17)
+                                            .addComponent(jLabel8))
+                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(737, 737, 737)))
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 779, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 779, Short.MAX_VALUE)
+                                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addGap(8, 8, 8)
+                                                .addComponent(jLabel7)))))))
+                        .addContainerGap(55, Short.MAX_VALUE))))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(66, 66, 66)
+                .addComponent(jLabel6)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
+                .addComponent(jLabel6)
+                .addGap(27, 27, 27)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(51, 51, 51)
-                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(93, 93, 93)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(108, 108, 108)
-                        .addComponent(jProgressBar2, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(86, 86, 86)
+                        .addGap(109, 109, 109)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(132, 132, 132)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(102, 102, 102)
-                        .addComponent(jProgressBar3, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(114, 114, 114)
+                        .addGap(129, 129, 129)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel7)
+                        .addGap(121, 121, 121)
+                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel8)))
+                .addGap(78, 78, 78)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addGap(34, 34, 34)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(268, Short.MAX_VALUE))
         );
 
         sideImg.setIcon(new javax.swing.ImageIcon("/Users/julioribeiro/git/projetos/trocaco/Trocaco/src/main/java/com/trocaco/firebase/resources/BG.png")); // NOI18N
@@ -163,19 +264,19 @@ public class Tela_home extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(sideImg)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                .addGap(62, 62, 62)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(74, 74, 74))
+                .addContainerGap(95, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(112, 112, 112))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(sideImg)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -189,9 +290,10 @@ public class Tela_home extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         jPanel1.getAccessibleContext().setAccessibleName("");
@@ -296,6 +398,54 @@ public class Tela_home extends javax.swing.JFrame {
         sideImg.add(buscaIC);
         sideImg.add(buscaLB);
     }
+        
+class RoundedPanel extends JPanel
+{
+    private java.awt.Color backgroundColor;
+    private int cornerRadius = 15;
+
+    public RoundedPanel(LayoutManager layout, int radius) {
+        super(layout);
+        cornerRadius = radius;
+    }
+
+    public RoundedPanel(LayoutManager layout, int radius, java.awt.Color bgColor) {
+        super(layout);
+        cornerRadius = radius;
+        backgroundColor = bgColor;
+    }
+
+    public RoundedPanel(int radius) {
+        super();
+        cornerRadius = radius;
+    }
+
+    public RoundedPanel(int radius, java.awt.Color bgColor) {
+        super();
+        cornerRadius = radius;
+        backgroundColor = bgColor;
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        Dimension arcs = new Dimension(cornerRadius, cornerRadius);
+        int width = getWidth();
+        int height = getHeight();
+        Graphics2D graphics = (Graphics2D) g;
+        graphics.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+        //Draws the rounded panel with borders.
+        if (backgroundColor != null) {
+            graphics.setColor(backgroundColor);
+        } else {
+            graphics.setColor(getBackground());
+        }
+        graphics.fillRoundRect(0, 0, width-1, height-1, arcs.width, arcs.height); //paint background
+        graphics.setColor(getForeground());
+        graphics.drawRoundRect(0, 0, width-1, height-1, arcs.width, arcs.height); //paint border
+    }
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
@@ -303,13 +453,17 @@ public class Tela_home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JProgressBar jProgressBar1;
-    private javax.swing.JProgressBar jProgressBar2;
-    private javax.swing.JProgressBar jProgressBar3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JLabel sideImg;
     // End of variables declaration//GEN-END:variables
 }
